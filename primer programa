@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <conio.h>
+
+int cadena[10],tam;
+int datos();
+int sumas();
+
+void main()
+{
+	datos();
+	sumas();
+}
+
+int datos()
+{
+	int a;
+	printf("ingresa cantidad de numeros: ");
+	scanf("%d",&tam);
+
+	for(a=0;a<tam;a++)
+	{
+		printf("numero: ");
+		scanf("%d",&cadena[a]);
+	}
+	for(a=0;a<tam;a++)
+	{
+		printf("%d",cadena[a]);
+	}
+	getch();
+	return 0;
+}
+
+int sumas()
+{
+	int mul,mayor=0,div,a,b;
+	for(a=0;a<tam;a++)
+	{
+		for(b=0;b<tam;b++)
+		{
+			if (a!=b)
+			{
+				mul=cadena[a]*cadena[b];
+				div=mul%3;
+
+				if(div==0 && mul>mayor)
+				{
+					mayor=mul;
+				}
+			}
+		}
+	}
+	printf("\nResultado: %d",mayor);
+	getch();
+	return 0;
+}
