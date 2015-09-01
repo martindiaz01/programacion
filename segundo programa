@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <conio.h>
+
+
+
+void main()
+{
+	int dimension,b,temp,a;
+	int menor,mayor,suma=0;
+	printf("Ingresa el tamaño de la cadena: ");
+	scanf("%d",&dimension);
+	int *arreglo=new int[dimension];
+
+	for(a=0;a<dimension;a++)
+	{
+		scanf("%d",&arreglo[a]);
+	}
+
+	for(a=0;a<dimension-1;a++)
+	{
+		for(b=0;b<dimension-1;b++)
+		{
+			if(arreglo[b]>arreglo[b+1])
+			{
+				temp=arreglo[b];
+				arreglo[b]=arreglo[b+1];
+				arreglo[b+1]=temp;
+
+			}
+		}
+	}
+
+menor=arreglo[0];
+mayor=arreglo[a-1];
+b=0;
+for(a=menor;a<mayor;a++)
+{
+	if(arreglo[b]==a)
+	{
+		b++;
+	}
+	else
+		printf("%d,",a);
+}
+getch();
+}
+
